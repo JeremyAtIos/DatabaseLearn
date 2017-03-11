@@ -16,7 +16,7 @@ typedef NS_ENUM(NSUInteger, FLStudentGenderType) {
 
 @interface FLStudent : NSObject
 
-@property (nonatomic, assign) NSInteger uid;
+@property (nonatomic, copy) NSString *uid;
 
 @property (nonatomic, copy) NSString *name;
 
@@ -24,12 +24,14 @@ typedef NS_ENUM(NSUInteger, FLStudentGenderType) {
 
 @property (nonatomic, assign) NSUInteger age;
 
-+ (instancetype)studentWithUid:(NSInteger)uid
+@property (nonatomic, copy, readonly) NSString *genderString;
+
++ (instancetype)studentWithUid:(NSString *)uid
                           name:(NSString *)name
                         gender:(FLStudentGenderType)gender
                            age:(NSUInteger)age;
 
-- (instancetype)initWithUid:(NSInteger)uid
+- (instancetype)initWithUid:(NSString *)uid
                        name:(NSString *)name
                      gender:(FLStudentGenderType)gender
                         age:(NSUInteger)age;

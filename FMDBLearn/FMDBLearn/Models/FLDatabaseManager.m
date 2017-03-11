@@ -38,7 +38,7 @@
         NSLog(@"数据库打开失败, %@", NSStringFromSelector(_cmd));
         return;
     } else {
-        NSString *studentSql = @"create table if not exists student (uid integer primary key autoincrement, name text, gender integer, age integer)";
+        NSString *studentSql = @"create table if not exists student (uid text primary key, name text, gender integer, age integer)";
         if ([_db executeUpdate:studentSql]) {
             NSLog(@"create student table success");
         }
@@ -61,8 +61,8 @@
         NSLog(@"数据库打开失败, %@", NSStringFromSelector(_cmd));
         success = NO;
     } else {
-        NSString *sql = @"INSERT INTO student (name, gender, age) VALUES (?, ?, ?)";
-        success = [_db executeUpdate:sql, student.name, @(student.gender), @(student.age)];
+        NSString *sql = @"INSERT INTO student (uid, name, gender, age) VALUES (?, ?, ?, ?)";
+        success = [_db executeUpdate:sql, student.uid, student.name, @(student.gender), @(student.age)];
         [_db close];
     }
     
@@ -75,7 +75,7 @@
     
     [_db open];
     NSString *sql = @"DELETE FROM student WHERE uid = ?";
-    success = [_db executeUpdate:sql, @(student.uid)];
+    success = [_db executeUpdate:sql, student.uid];
     [_db close];
     
     return success;
@@ -87,7 +87,7 @@
     
     [_db open];
     NSString *sql = @"UPDATE student SET name = ?, gender = ?, age = ? where uid = ?";
-    success = [_db executeUpdate:sql, student.name, @(student.gender), @(student.age), @(student.uid)];
+    success = [_db executeUpdate:sql, student.name, @(student.gender), @(student.age), student.uid];
     [_db close];
     
     return success;
@@ -101,7 +101,7 @@
     NSString *sql = @"SELECT * FROM student WHERE uid = ?";
     FMResultSet *result = [_db executeQuery:sql, @(uid)];
     while ([result next]) {
-        student.uid = [result intForColumnIndex:0];
+        student.uid = [result stringForColumnIndex:0];
         student.name = [result stringForColumnIndex:1];
         student.gender = [result intForColumnIndex:2];
         student.age = [result intForColumnIndex:3];
@@ -120,7 +120,7 @@
     FMResultSet *result = [_db executeQuery:sql];
     while ([result next]) {
         FLStudent *student = [[FLStudent alloc] init];
-        student.uid = [result intForColumnIndex:0];
+        student.uid = [result stringForColumnIndex:0];
         student.name = [result stringForColumnIndex:1];
         student.gender = [result intForColumnIndex:2];
         student.age = [result intForColumnIndex:3];
