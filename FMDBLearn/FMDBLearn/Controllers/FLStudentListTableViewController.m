@@ -10,6 +10,7 @@
 #import "FLDatabaseManager.h"
 #import "FLStudentTableViewCell.h"
 #import "FLStudent.h"
+#import "FLAddStudentViewController.h"
 
 @interface FLStudentListTableViewController ()
 
@@ -48,14 +49,28 @@
 
 #pragma mark - Event
 
-- (IBAction)addBarButtonClicked:(id)sender
+- (IBAction)editBarButtonClicked:(id)sender
 {
     
 }
 
-- (IBAction)editBarButtonClicked:(id)sender
+- (IBAction)doneButtonClicked:(UIStoryboardSegue *)segue
 {
-    
+    if ([segue.identifier isEqualToString:@"Add Student"]) {
+        if ([segue.sourceViewController isKindOfClass:[FLAddStudentViewController class]]) {
+            FLAddStudentViewController *addStudentVC = (FLAddStudentViewController *)segue.sourceViewController;
+            
+            //没有学生信息，直接返回
+            if (!addStudentVC.student) return;
+            
+            //向数据库中插入学生信息
+            [self.dbManager insertStudent:addStudentVC.student];
+            
+            //刷新数据源和列表
+            self.students = nil;
+            [self.tableView reloadData];
+        }
+    }
 }
 
 #pragma mark - Table view data source
@@ -88,17 +103,25 @@
     return YES;
 }
 
-/*
-// Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
+        //取出要删除的模型对象
+        FLStudent *student = self.students[indexPath.row];
+        
+        //从数据库中删除学生
+        [self.dbManager deleteStudent:student];
+        
+        //从数组中删除学生
+        NSMutableArray *mutableArray = [self.students mutableCopy];
+        [mutableArray removeObject:student];
+        self.students = [mutableArray copy];
+        
+        //删除行
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
 
 /*
 // Override to support rearranging the table view.

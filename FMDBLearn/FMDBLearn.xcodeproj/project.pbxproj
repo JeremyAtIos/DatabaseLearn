@@ -23,6 +23,7 @@
 		74454FE41E6FFF550074E832 /* FLDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 74454FE31E6FFF550074E832 /* FLDatabaseManager.m */; };
 		74AA92441E73CB1500694EF7 /* FLStudentListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AA92431E73CB1500694EF7 /* FLStudentListTableViewController.m */; };
 		74AA92471E73CB2D00694EF7 /* FLStudentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AA92461E73CB2D00694EF7 /* FLStudentTableViewCell.m */; };
+		74AA924A1E73EAAD00694EF7 /* FLAddStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AA92491E73EAAD00694EF7 /* FLAddStudentViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,8 @@
 		74AA92431E73CB1500694EF7 /* FLStudentListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLStudentListTableViewController.m; sourceTree = "<group>"; };
 		74AA92451E73CB2D00694EF7 /* FLStudentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLStudentTableViewCell.h; sourceTree = "<group>"; };
 		74AA92461E73CB2D00694EF7 /* FLStudentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLStudentTableViewCell.m; sourceTree = "<group>"; };
+		74AA92481E73EAAD00694EF7 /* FLAddStudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAddStudentViewController.h; sourceTree = "<group>"; };
+		74AA92491E73EAAD00694EF7 /* FLAddStudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAddStudentViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,8 @@
 			children = (
 				74AA92421E73CB1500694EF7 /* FLStudentListTableViewController.h */,
 				74AA92431E73CB1500694EF7 /* FLStudentListTableViewController.m */,
+				74AA92481E73EAAD00694EF7 /* FLAddStudentViewController.h */,
+				74AA92491E73EAAD00694EF7 /* FLAddStudentViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74AA924A1E73EAAD00694EF7 /* FLAddStudentViewController.m in Sources */,
 				74454FB01E6FF8CE0074E832 /* AppDelegate.m in Sources */,
 				74AA92441E73CB1500694EF7 /* FLStudentListTableViewController.m in Sources */,
 				74454FDA1E6FFD8A0074E832 /* FMDatabase.m in Sources */,

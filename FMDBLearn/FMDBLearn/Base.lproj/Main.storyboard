@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8YD-V1-TRv" id="xWp-xr-58E">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="编号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vr-t5-VDW">
@@ -76,14 +76,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="学生" id="3IS-f9-NrO">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="w0i-Fm-CF1">
-                            <connections>
-                                <action selector="editBarButtonClicked:" destination="XhL-lo-Ogc" id="4Xu-j5-Bwl"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="mEu-kN-mdQ">
                             <connections>
-                                <action selector="addBarButtonClicked:" destination="XhL-lo-Ogc" id="7r3-9c-Z7B"/>
+                                <segue destination="3bh-cn-Gfe" kind="presentation" id="Se1-yk-xx5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -91,6 +86,113 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l2t-B3-46K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="527.20000000000005" y="-213.64317841079463"/>
+        </scene>
+        <!--Add Student View Controller-->
+        <scene sceneID="ar7-oV-gVM">
+            <objects>
+                <viewController id="3bh-cn-Gfe" customClass="FLAddStudentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wEq-VL-ctI"/>
+                        <viewControllerLayoutGuide type="bottom" id="eaW-8L-s35"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tM1-4C-aUM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="性别：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzf-3C-gDL">
+                                <rect key="frame" x="16" y="323" width="52" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="年龄：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uiw-CV-aWw">
+                                <rect key="frame" x="16" y="359.5" width="52" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TJM-1F-WXE">
+                                <rect key="frame" x="76" y="356.5" width="283" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrJ-Cb-1Ll">
+                                <rect key="frame" x="16" y="285" width="52" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ET-hN-yDl">
+                                <rect key="frame" x="76" y="282" width="283" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="编号：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPy-tQ-dPi">
+                                <rect key="frame" x="16" y="247" width="52" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Yp-XU-vLH">
+                                <rect key="frame" x="76" y="244" width="283" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Jd-jO-BRT">
+                                <rect key="frame" x="172" y="426.5" width="31" height="30"/>
+                                <state key="normal" title="完成"/>
+                                <connections>
+                                    <segue destination="SAu-sd-FCv" kind="unwind" identifier="Add Student" unwindAction="doneButtonClicked:" id="e8Z-Vi-Ohj"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3jW-Lp-7YQ">
+                                <rect key="frame" x="76" y="320.5" width="125" height="29"/>
+                                <segments>
+                                    <segment title="未知"/>
+                                    <segment title="男"/>
+                                    <segment title="女"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3jW-Lp-7YQ" firstAttribute="top" secondItem="7ET-hN-yDl" secondAttribute="bottom" constant="8" id="0C0-y4-zgb"/>
+                            <constraint firstItem="TJM-1F-WXE" firstAttribute="leading" secondItem="uiw-CV-aWw" secondAttribute="trailing" constant="8" id="3kd-9L-GyR"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="uiw-CV-aWw" secondAttribute="leading" id="53d-vV-7NS"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="lPy-tQ-dPi" secondAttribute="leading" id="7qZ-gH-Jd0"/>
+                            <constraint firstItem="3jW-Lp-7YQ" firstAttribute="leading" secondItem="Qzf-3C-gDL" secondAttribute="trailing" constant="8" id="GdC-gn-YaR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6Yp-XU-vLH" secondAttribute="trailing" id="Gqc-N9-gmq"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="rrJ-Cb-1Ll" secondAttribute="leading" id="Ite-AL-FAE"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Qzf-3C-gDL" secondAttribute="leading" id="Ong-es-xqc"/>
+                            <constraint firstItem="7ET-hN-yDl" firstAttribute="baseline" secondItem="rrJ-Cb-1Ll" secondAttribute="baseline" id="QO4-m3-zi6"/>
+                            <constraint firstItem="7ET-hN-yDl" firstAttribute="leading" secondItem="rrJ-Cb-1Ll" secondAttribute="trailing" constant="8" id="Z7m-z1-DqL"/>
+                            <constraint firstItem="Qzf-3C-gDL" firstAttribute="centerY" secondItem="tM1-4C-aUM" secondAttribute="centerY" id="Zgz-zR-Ygj"/>
+                            <constraint firstItem="TJM-1F-WXE" firstAttribute="top" secondItem="3jW-Lp-7YQ" secondAttribute="bottom" constant="8" id="aJK-y4-79W"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TJM-1F-WXE" secondAttribute="trailing" id="aNZ-u2-4qs"/>
+                            <constraint firstItem="7ET-hN-yDl" firstAttribute="top" secondItem="6Yp-XU-vLH" secondAttribute="bottom" constant="8" id="d8a-xg-lYN"/>
+                            <constraint firstItem="6Yp-XU-vLH" firstAttribute="baseline" secondItem="lPy-tQ-dPi" secondAttribute="baseline" id="deF-HJ-5Bq"/>
+                            <constraint firstItem="TJM-1F-WXE" firstAttribute="baseline" secondItem="uiw-CV-aWw" secondAttribute="baseline" id="itm-dA-tAs"/>
+                            <constraint firstItem="7Jd-jO-BRT" firstAttribute="top" secondItem="TJM-1F-WXE" secondAttribute="bottom" constant="40" id="ivb-Se-hu0"/>
+                            <constraint firstItem="7Jd-jO-BRT" firstAttribute="centerX" secondItem="tM1-4C-aUM" secondAttribute="centerX" id="jTh-xi-IzP"/>
+                            <constraint firstItem="6Yp-XU-vLH" firstAttribute="leading" secondItem="lPy-tQ-dPi" secondAttribute="trailing" constant="8" id="jyB-up-J4r"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7ET-hN-yDl" secondAttribute="trailing" id="qOu-6y-tY4"/>
+                            <constraint firstItem="3jW-Lp-7YQ" firstAttribute="baseline" secondItem="Qzf-3C-gDL" secondAttribute="baseline" id="sH2-Kj-J49"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ageTextField" destination="TJM-1F-WXE" id="Dfh-ay-CZ7"/>
+                        <outlet property="genderSegmentedControl" destination="3jW-Lp-7YQ" id="jZc-l6-bdN"/>
+                        <outlet property="nameTextField" destination="7ET-hN-yDl" id="6Ru-5J-8A4"/>
+                        <outlet property="uidTextField" destination="6Yp-XU-vLH" id="Yln-0i-3Xo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iRK-yT-Tct" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="SAu-sd-FCv" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1400.8" y="-214.54272863568218"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rHk-Uq-Blk">
