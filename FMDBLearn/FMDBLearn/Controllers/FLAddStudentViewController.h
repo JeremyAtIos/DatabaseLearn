@@ -12,6 +12,8 @@
 
 @interface FLAddStudentViewController : UIViewController
 
-@property (nonatomic, strong, readonly) FLStudent *student;
+@property (nonatomic, strong) FLStudent *student;
+
+@property (nonatomic, assign, readonly) BOOL editing;
 
 @end

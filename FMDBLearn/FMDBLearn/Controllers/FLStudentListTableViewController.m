@@ -49,11 +49,6 @@
 
 #pragma mark - Event
 
-- (IBAction)editBarButtonClicked:(id)sender
-{
-    
-}
-
 - (IBAction)doneButtonClicked:(UIStoryboardSegue *)segue
 {
     if ([segue.identifier isEqualToString:@"Add Student"]) {
@@ -63,8 +58,15 @@
             //没有学生信息，直接返回
             if (!addStudentVC.student) return;
             
-            //向数据库中插入学生信息
-            [self.dbManager insertStudent:addStudentVC.student];
+            if (addStudentVC.editing) {
+                
+                //更新学生信息
+                [self.dbManager updateStudent:addStudentVC.student];
+            } else {
+                
+                //向数据库中插入学生信息
+                [self.dbManager insertStudent:addStudentVC.student];
+            }
             
             //刷新数据源和列表
             self.students = nil;
@@ -123,28 +125,18 @@
     }   
 }
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"Edit Student Info"]) {
+        if ([segue.destinationViewController isKindOfClass:[FLAddStudentViewController class]]) {
+            FLAddStudentViewController *addStudentVC = (FLAddStudentViewController *)segue.destinationViewController;
+            if ([sender isKindOfClass:[FLStudentTableViewCell class]]) {
+                FLStudentTableViewCell *cell = (FLStudentTableViewCell *)sender;
+                NSInteger index = [self.tableView indexPathForCell:cell].row;
+                addStudentVC.student = self.students[index];
+            }
+        }
+    }
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

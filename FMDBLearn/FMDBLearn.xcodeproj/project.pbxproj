@@ -24,6 +24,7 @@
 		74AA92441E73CB1500694EF7 /* FLStudentListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AA92431E73CB1500694EF7 /* FLStudentListTableViewController.m */; };
 		74AA92471E73CB2D00694EF7 /* FLStudentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AA92461E73CB2D00694EF7 /* FLStudentTableViewCell.m */; };
 		74AA924A1E73EAAD00694EF7 /* FLAddStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AA92491E73EAAD00694EF7 /* FLAddStudentViewController.m */; };
+		74F51B7D1E84DE2400CE3C14 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F51B7C1E84DE2400CE3C14 /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,8 @@
 		74AA92461E73CB2D00694EF7 /* FLStudentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLStudentTableViewCell.m; sourceTree = "<group>"; };
 		74AA92481E73EAAD00694EF7 /* FLAddStudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAddStudentViewController.h; sourceTree = "<group>"; };
 		74AA92491E73EAAD00694EF7 /* FLAddStudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAddStudentViewController.m; sourceTree = "<group>"; };
+		74F51B7B1E84DE2400CE3C14 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		74F51B7C1E84DE2400CE3C14 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,10 +95,11 @@
 		74454FAA1E6FF8CE0074E832 /* FMDBLearn */ = {
 			isa = PBXGroup;
 			children = (
+				74F51B7A1E84DE2400CE3C14 /* MBProgressHUD */,
+				74454FCD1E6FFD8A0074E832 /* fmdb */,
 				74454FAE1E6FF8CE0074E832 /* AppDelegate.h */,
 				74454FAF1E6FF8CE0074E832 /* AppDelegate.m */,
 				74454FB41E6FF8CE0074E832 /* Main.storyboard */,
-				74454FCD1E6FFD8A0074E832 /* fmdb */,
 				74454FC21E6FF90B0074E832 /* Controllers */,
 				74454FC31E6FF90B0074E832 /* Models */,
 				74454FC41E6FF90B0074E832 /* Others */,
@@ -189,6 +193,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		74F51B7A1E84DE2400CE3C14 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				74F51B7B1E84DE2400CE3C14 /* MBProgressHUD.h */,
+				74F51B7C1E84DE2400CE3C14 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -270,6 +283,7 @@
 				74454FAD1E6FF8CE0074E832 /* main.m in Sources */,
 				74454FE41E6FFF550074E832 /* FLDatabaseManager.m in Sources */,
 				74454FDC1E6FFD8A0074E832 /* FMDatabasePool.m in Sources */,
+				74F51B7D1E84DE2400CE3C14 /* MBProgressHUD.m in Sources */,
 				74454FDB1E6FFD8A0074E832 /* FMDatabaseAdditions.m in Sources */,
 				74454FC91E6FF94C0074E832 /* FLStudent.m in Sources */,
 				74454FDD1E6FFD8A0074E832 /* FMDatabaseQueue.m in Sources */,
@@ -338,7 +352,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -379,7 +393,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
